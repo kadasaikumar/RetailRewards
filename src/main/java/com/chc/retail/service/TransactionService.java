@@ -9,8 +9,6 @@ import java.util.zip.DataFormatException;
 
 public interface TransactionService {
 
-  String Greeting();
-
   Transaction createTransaction(TransactionData transactionData) throws DataFormatException;
 
   List<Transaction> findAllTransactions();

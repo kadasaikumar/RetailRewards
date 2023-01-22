@@ -24,11 +24,6 @@ public class TransactionController {
     this.transactionService = transactionService;
   }
 
-  @GetMapping(PING)
-  private ResponseEntity<Object> ping() {
-    return new ResponseEntity<>(transactionService.Greeting(), HttpStatus.OK);
-  }
-
   @PostMapping(TRANSACTION)
   private ResponseEntity<Object> newTransaction(@Valid @RequestBody TransactionData txnData)
       throws DataFormatException {
@@ -103,10 +98,4 @@ public class TransactionController {
         transactionService.totalRewardPoints(mobileNumber, numberOfMonths);
     return new ResponseEntity<>(totalRewardPoints, HttpStatus.OK);
   }
-
-  /*@PostMapping(REWARDS_MOBILE_NUMBER)
-  private ResponseEntity<Object> CustomerRewardsByMobile(@PathVariable String mobileNumber) {
-    final int totalPoints = transactionService.totalRewardPerCustomerByMobile(mobileNumber);
-    return new ResponseEntity<>("User -" + totalPoints, HttpStatus.OK);
-  }*/
 }

@@ -65,6 +65,6 @@ public class CustomerController {
   @PreAuthorize("hasAnyRole('ADMIN')")
   public ResponseEntity<String> deleteCustomer(@PathVariable String custId) {
     customerService.deleteCustomer(Long.valueOf(custId));
-    return new ResponseEntity<>("", HttpStatus.NO_CONTENT);
+    return new ResponseEntity<>("Record Deleted!", HttpStatus.NO_CONTENT);
   }
 }

@@ -48,14 +48,8 @@ public class TransactionServiceImpl implements TransactionService {
   }
 
   @Override
-  public String Greeting() {
-    return "It Works!!!!";
-  }
-
-  @Override
   public Transaction createTransaction(TransactionData transactionData) throws DataFormatException {
     transactionData.setPoints(calculatePoints(transactionData.getAmount()));
-    // CommonUtil commonUtil = new CommonUtil();
     log.debug("Loyalty Points calculated - {}", transactionData);
     final Transaction savedTxn = transactionRepository.save(convertDtoToEntity(transactionData));
     savedTxn
