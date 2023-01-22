@@ -17,4 +17,6 @@ public interface CustomerService {
   List<Customer> allCustomers();
 
   void deleteCustomer(long custId);
+
+  Customer maskDataFields(Customer customer);
 }

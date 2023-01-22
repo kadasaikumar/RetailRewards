@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,7 +35,7 @@ public class CustomerController {
   }
 
   @PostMapping(CUSTOMERS)
-  // @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('ADMIN')")
   public ResponseEntity<List<Customer>> allCustomers() {
     final List<Customer> customers = customerService.allCustomers();
     return new ResponseEntity<>(customers, HttpStatus.OK);
@@ -44,7 +45,7 @@ public class CustomerController {
   public ResponseEntity<Object> customerByMobile(@PathVariable String mobileNumber) {
     final Optional<Customer> customer = customerService.customerByMobile(mobileNumber);
     if (customer.isPresent()) {
-      return new ResponseEntity<>(customer.get(), HttpStatus.OK);
+      return new ResponseEntity<>(customerService.maskDataFields(customer.get()), HttpStatus.OK);
     } else {
       return new ResponseEntity<>("Data Not Found!", HttpStatus.OK);
     }
@@ -54,13 +55,14 @@ public class CustomerController {
   public ResponseEntity<Object> customerByEmail(@PathVariable String email) {
     final Optional<Customer> customer = customerService.customerByEmail(email);
     if (customer.isPresent()) {
-      return new ResponseEntity<>(customer.get(), HttpStatus.OK);
+      return new ResponseEntity<>(customerService.maskDataFields(customer.get()), HttpStatus.OK);
     } else {
       return new ResponseEntity<>("Data Not Found!", HttpStatus.OK);
     }
   }
 
   @DeleteMapping(CUSTOMER_CUST_ID)
+  @PreAuthorize("hasAnyRole('ADMIN')")
   public ResponseEntity<String> deleteCustomer(@PathVariable String custId) {
     customerService.deleteCustomer(Long.valueOf(custId));
     return new ResponseEntity<>("", HttpStatus.NO_CONTENT);

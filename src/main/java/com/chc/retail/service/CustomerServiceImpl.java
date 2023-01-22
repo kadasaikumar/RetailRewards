@@ -66,6 +66,13 @@ public class CustomerServiceImpl implements CustomerService {
     customerRepo.deleteById(custId);
   }
 
+  @Override
+  public Customer maskDataFields(Customer customer) {
+    customer.setMobileNumber(commonUtil.maskMobile(customer.getMobileNumber()));
+    customer.setEmail(commonUtil.maskEmail(customer.getEmail()));
+    return null;
+  }
+
   private Customer customerDtoToEntity(CustomerData customerDto) {
     Customer customer = new Customer();
     customer.setEmail(customerDto.getEmail());

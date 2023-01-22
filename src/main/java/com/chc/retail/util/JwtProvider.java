@@ -1,6 +1,6 @@
-package com.chc.customer.utility;
+package com.chc.retail.util;
 
-import com.chc.customer.security.UserPrincipal;
+import com.chc.retail.security.UserPrincipal;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
