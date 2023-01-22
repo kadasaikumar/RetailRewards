@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "44527292-29b0-4f03-838a-ce5cf0a7221d",
+		"name": "RetailApi Transaction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDM1ODgzNiwiZXhwIjoxNjc0MzU5NDM2fQ.oTDbytPM3MU_E98Ar3HVSqgOfhEWY0iDUoSl58Cg30gZMCreKse1Iq-kqvpHJBgh5-PeNSe3IE3Cbpr4BKnAKA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"particulars\": \"milkmilk\",\r\n\"amount\": \"120.00\",\r\n\"status\": 1,\r\n\"refund\": false,\r\n\"time\": \"21-08-2022 11:36:00\",\r\n\"location\": \"India\",\r\n\"custId\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8899/api/purchase/transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionHistory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionHistory/CustId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/72",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"72"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionHistory/CustMobile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/mobile/6245995542",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"mobile",
+						"6245995542"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransactionHistory/CustEmail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/email/mlabell3@tinypic.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"email",
+						"mlabell3@tinypic.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RejectedTransactionHistory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/rejected/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"rejected",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RejectTransaction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/reject/1001",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"reject",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TotalRewards/mobile/numberofmonths Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/rewards/6245995542/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"rewards",
+						"6245995542",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefundedTransactionHistory Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/history/refund/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"history",
+						"refund",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefundTransaction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/purchase/refund/1001",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"purchase",
+						"refund",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

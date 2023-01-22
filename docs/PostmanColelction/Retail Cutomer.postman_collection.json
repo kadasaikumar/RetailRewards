@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "0ad3baa7-8b17-4c7c-9af3-f8bd74fd5a47",
+		"name": "Retail Cutomer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"userName\":\"kumar\",\r\n\t\"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8899/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Details based on Mobile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/customer/mobile/4112397252",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"customer",
+						"mobile",
+						"4112397252"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Details based on Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/customer/email/aanderl2r@fema.gov",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"customer",
+						"email",
+						"aanderl2r@fema.gov"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer Based on CustomerId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/customer/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Customers Only Admin can view Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDM1OTE2NSwiZXhwIjoxNjc0MzU5NzY1fQ.-sSa-lOuEdjAI3uvdca2ekzjn1-sZdSGFvUGQLyOg8aPaoXDOHWkqQTyCIHzkrKybfK6PDhm4HiYqphZGcWgAQ",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8899/api/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a customer Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hciIsImlhdCI6MTY3NDMzMTI4MywiZXhwIjoxNjc0MzMxODgzfQ.cD5JS37yxLLSSji-QWj4vxxlsXwQ3HZHs4823YGrsqIngi0Fh9axQo6cM07EvCirjCxcBLe4H3qMIYVRRJvyrw",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"firstName\":\"sai\",\r\n\t\"lastName\":\"kumar\",\r\n\t\"email\":\"write2me@gmail.com\",\r\n\t\"mobile\":\"9999988887\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8899/api/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8899",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

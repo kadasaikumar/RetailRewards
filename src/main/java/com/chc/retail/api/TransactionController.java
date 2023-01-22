@@ -6,6 +6,7 @@ import com.chc.retail.entity.Transaction;
 import com.chc.retail.service.TransactionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -32,7 +33,7 @@ public class TransactionController {
   }
 
   @PostMapping(HISTORY_PAGE_SIZE)
-  // @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('ADMIN')")
   private ResponseEntity<Object> customerAllTransaction(
       @PathVariable int page, @PathVariable int size) {
     final List<Transaction> allTransactionsByTime =
@@ -41,7 +42,7 @@ public class TransactionController {
   }
 
   @PostMapping(HISTORY_CUST_ID)
-  // @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('DEV')")
   private ResponseEntity<Object> customerTransactionsById(@PathVariable Long custId) {
     final List<Transaction> transactionsOfCustomer =
         transactionService.findTransactionsOfCustomer(custId);
@@ -76,14 +77,14 @@ public class TransactionController {
     return new ResponseEntity<>(transactionsOfCustomerByEmail, HttpStatus.OK);
   }
 
-  @PostMapping(REFUND_TXN_ID)
+  @PutMapping(REFUND_TXN_ID)
   private ResponseEntity<Object> CustomerTransactionRefund(@PathVariable Long txnId) {
     final int updateStatus = transactionService.refundTxn(txnId);
     String refundMsg = updateStatus > 0 ? "Refunded successfully !" : " Refund Failed";
     return new ResponseEntity<>(refundMsg, HttpStatus.OK);
   }
 
-  @PostMapping(REJECT_TXN_ID)
+  @PutMapping(REJECT_TXN_ID)
   private ResponseEntity<Object> CustomerTransactionReject(@PathVariable Long txnId) {
     final int rejectStatus = transactionService.rejectTxn(txnId);
     String rejectMsg =

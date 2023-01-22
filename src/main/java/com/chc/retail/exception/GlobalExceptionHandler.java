@@ -95,7 +95,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
   public ResponseEntity<Object> genericException(Exception ex, WebRequest webRequest) {
     List<String> details = new ArrayList<String>();
     details.add(ex.getMessage());
-    ApiResponseHandler err = new ApiResponseHandler(LocalDateTime.now(), ex.getMessage(), details);
+    ApiResponseHandler err = new ApiResponseHandler(LocalDateTime.now(), ex.getLocalizedMessage(), details);
+    log.error("Error - ",ex);
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
   }
 }
